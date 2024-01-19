@@ -31,7 +31,7 @@ const Jobs = () => {
                 console.error('User not available');
                 return;
             }
-            // console.log('Current User ID:', currentUser._id);
+            console.log('Current User ID:', currentUser._id);
             const response = await axios.get(`/api/jobs?user=${currentUser._id}`)
             setJobs(response.data.data)
         } catch (error: any) {
@@ -133,11 +133,11 @@ const Jobs = () => {
                     </div> */}
 
                     <div className={`my-2 ${styles["large-table"]}`}>
-                        <Table className='custom-table' columns={columns} dataSource={jobs} rowKey="_id" />
+                        <Table columns={columns} dataSource={jobs} rowKey="_id" />
                     </div>
 
                     <div className={`my-2 ${styles["mobile-table"]}`}>
-                        <Table className='custom-table' style={{ maxWidth: 500 }} columns={columns} dataSource={jobs} rowKey="_id" scroll={{ x: true }} />
+                        <Table style={{ maxWidth: 500 }} columns={columns} dataSource={jobs} rowKey="_id" scroll={{ x: true }} />
                     </div>
                 </>
             )}

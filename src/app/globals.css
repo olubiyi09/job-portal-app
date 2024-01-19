@@ -18,10 +18,11 @@ table {
     border-radius: 2px !important;
 }
 
-.custom-table {
+.ant-table-thead .ant-table-cell {
     background-color: #ffffffea;
 }
 
-/* .custom-table>tr>th {
-    background-color: #ffffffea !important;
-} */
+
+.ant-table-tbody {
+    background-color: #ffffffea;
+}
