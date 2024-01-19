@@ -18,6 +18,10 @@ table {
     border-radius: 2px !important;
 }
 
-.custom-table Table {
+.custom-table {
+    background-color: #ffffffea;
+}
+
+.custom-table>* {
     background-color: #ffffffea;
 }
