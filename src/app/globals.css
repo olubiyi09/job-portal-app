@@ -19,9 +19,9 @@ table {
 }
 
 .custom-table {
-    background-color: #ffffffea !important;
+    background-color: #ffffffea;
 }
 
-.custom-table>tr>th {
+/* .custom-table>tr>th {
     background-color: #ffffffea !important;
-}
+} */
