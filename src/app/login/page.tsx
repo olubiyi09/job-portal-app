@@ -25,7 +25,7 @@ const Login: React.FC = () => {
   const [errors, setErrors] = useState<{ [key in keyof FormData]?: string }>({});
 
   const dispatch = useDispatch()
-  const cardBackgroundColor = '#fff';
+  const cardBackgroundColor = '#ffffffea';
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>, field: keyof FormData) => {
     setFormData({
       ...formData,
@@ -93,7 +93,7 @@ const Login: React.FC = () => {
   return (
     <div className={`flex items-center justify-center py-2 ${styles.cont}`}>
       <div className={`flex items-center justify-center ${styles.wrapper}`}>
-        <Card style={{ background: cardBackgroundColor }} bordered={true}>
+        <Card style={{ background: cardBackgroundColor }} bordered={false}>
           <div className={`lg:w-96 md:w-96 sm:w-auto s p-6 rounded-md ${styles.form}`}>
             <form className="mt-3" onSubmit={handleFormSubmit}>
               <h1 className="text-3xl block text-center font-semibold">Login</h1>
