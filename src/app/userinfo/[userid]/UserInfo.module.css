@@ -1,0 +1,31 @@
+.banner-content {
+    background-color: #844d36;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fdebeb;
+}
+
+.banner-content h1 {
+    font-size: 2rem;
+}
+
+.banner-content p {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+}
+
+.back {
+    background-color: #fdebeb;
+    color: #844d36;
+    padding: .1rem .5rem;
+    border-radius: 5px;
+}
+
+.back:hover {
+    background-color: #844d36;
+    color: #fdebeb;
+    border: 1px solid #fdebeb;
+}

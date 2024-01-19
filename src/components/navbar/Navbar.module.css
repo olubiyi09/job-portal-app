@@ -1,0 +1,61 @@
+.header {
+    background-color: #fdebeb;
+}
+
+.logo {
+    color: #844d36;
+}
+
+.ul {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.ul li {
+    color: #844d36;
+    font-size: 1.1rem;
+}
+
+.nav-button {
+    color: #eee;
+}
+
+.btn {
+    background-color: #844d36;
+    color: #eee;
+    padding: .5rem 1.3rem;
+    cursor: pointer;
+}
+
+
+
+@media screen and (max-width: 850px) {
+    .header {
+        background-color: #fdebeb;
+    }
+
+
+
+    .ul li {
+        color: #844d36;
+    }
+
+}
+
+@media screen and (max-width: 700px) {
+    .header {
+        background-color: #844d36;
+    }
+
+    .logo {
+        color: #eee;
+    }
+
+    .ul li {
+        color: #eee;
+    }
+
+    .btn {
+        background-color: transparent;
+    }
+}

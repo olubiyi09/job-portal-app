@@ -1,0 +1,64 @@
+.container {
+    width: 80%;
+    margin: auto;
+    margin-top: 2rem;
+}
+
+.wrapper {
+    display: flex;
+}
+
+.details {
+    margin-left: 2rem;
+    padding-top: 1rem;
+}
+
+.info {
+    display: flex;
+}
+
+.left {
+    margin-right: 3rem;
+}
+
+.left b,
+.right b {
+    font-size: 1.1rem;
+    color: #844d36;
+}
+
+.info span {
+    color: #844d36;
+    height: 2rem;
+}
+
+.details h2 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: rgb(95, 95, 95);
+}
+
+.details .employer-name p {
+    width: fit-content;
+    background-color: rgb(214, 213, 213);
+    color: #693b27;
+    padding: .2rem .5rem;
+    margin-bottom: .5rem;
+    border-radius: 2px;
+}
+
+.about h1 {
+    font-size: 1.6rem;
+    color: rgb(95, 95, 95);
+}
+
+.about span {
+    color: rgb(95, 95, 95);
+}
+
+@media screen and (max-width: 600px) {
+    .wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+}

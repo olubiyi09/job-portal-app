@@ -1,0 +1,16 @@
+.container {
+    width: 70%;
+    padding-bottom: 3rem;
+}
+
+.header-bg {
+    /* background-color: #844d36; */
+    color: #844d36;
+}
+
+@media only screen and (max-width: 840px) {
+    .container {
+        width: 100%;
+    }
+
+}

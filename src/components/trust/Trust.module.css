@@ -1,0 +1,151 @@
+.section {
+    width: 100%;
+    background-color: #fffbfb;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.section .container {
+    width: 90%;
+    margin: auto;
+}
+
+.image-section {
+    width: 44%;
+    position: relative;
+}
+
+.image-section img {
+    width: 210px;
+    height: 310px;
+}
+
+.image-section > :first-child {
+   margin-right: 1.3rem;
+   width: 300px;
+   height: 100%;
+  }
+
+.trust {
+    position: absolute;
+    bottom: 1rem;
+    right: 0;
+    width: 60%;
+    background-color: #844d36;
+    color: #fffbfb;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 600;
+    border: .5rem solid #ffbdbd;
+}
+
+.content-section {
+    width: 50%;
+    margin-left: 5rem;
+    margin-top: 2rem;
+}
+
+.content-section h1 {
+    width: 80%;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #844d36;
+}
+
+.content-section p {
+    font-size: 1.1rem;
+}
+
+.btn-section {
+    margin-top: 1rem;
+}
+
+.btn-section > * {
+    background-color: #844d36;
+    padding: 1rem 2rem;
+    margin-right: 1rem;
+    color: #fffbfb;
+    transition: .3s ease-in-out;
+}
+
+.btn-section button span {
+    margin-left: .5rem;
+}
+
+.btn-section > :nth-child(2) {
+    background-color: transparent;
+    color: #844d36;
+    border: 1px solid #844d36;
+}
+.btn-section > :nth-child(2):hover {
+    background-color: #844d36;
+    color: #fffbfb;
+}
+
+@media screen and (max-width: 840px) {
+    .container {
+        flex-direction: column;
+    }
+    .image-section {
+        padding-bottom: 8rem;
+    }
+
+    .image-section,
+    .content-section {
+        width: 100%;
+    }
+
+    .image-section img {
+        width: 48.5%;
+        height: 100%;
+    }
+
+    .image-section > :first-child {
+        width: 48.5%;
+       }
+
+    .trust {
+        bottom: 0;
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .content-section {
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .image-section {
+        flex-direction: column;
+    }
+
+    .image-section img {
+        width: 100%;
+        height: 80%;
+        margin: auto;
+    }
+
+    .image-section > :first-child {
+        width: 100%;
+        height: 80%;
+        margin: auto;
+        margin-bottom: 2rem;
+       }
+
+       .content-section h1 {
+        font-size: 2rem;
+        width: 100%;
+    }
+    
+}
+
+@media screen and (max-width: 440px) {
+    .btn-section {
+        flex-direction: column;
+    }
+
+    .btn-section > :nth-child(2) {
+       margin-top: 1rem;
+    }
+}

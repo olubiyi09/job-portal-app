@@ -1,0 +1,52 @@
+.em-form {
+    width: auto;
+    margin: auto;
+}
+
+.em-form input,
+.em-form textarea,
+.em-form select {
+    height: 45px;
+    width: 100%;
+    border: 1px solid #c6c6c6;
+    padding-left: 15px;
+    border-radius: 2px;
+}
+
+.em-form input:focus,
+.em-form textarea:focus,
+.em-form select:focus {
+    outline: none;
+}
+
+.em-form textarea {
+    padding-top: 10px;
+    min-height: 100px;
+}
+
+.em-form button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    height: 45px;
+    box-shadow: none;
+    border-radius: 2px;
+}
+
+.em-form label {
+    margin: 0;
+    padding: 0;
+    color: #353535;
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 840px) {
+    .em-form {
+        width: 90%;
+        margin: auto;
+    }
+
+    .first-row {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,14 @@
+.mobile-table {
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+    .large-table {
+        display: none;
+    }
+
+    .mobile-table {
+        display: block;
+    }
+
+}

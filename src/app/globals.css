@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;700&family=Rethink+Sans:wght@400;500;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+* {
+    font-family: 'Nunito', sans-serif;
+    font-family: 'Rethink Sans', sans-serif;
+}
+
+body {
+    background-color: #fdebeb;
+}
+
+table {
+    border: 1px solid #b3b3b3 !important;
+    border-radius: 2px !important;
+}

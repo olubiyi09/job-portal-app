@@ -1,0 +1,48 @@
+.container {
+    width: 90%;
+    margin: auto;
+}
+
+.wrapper {
+    background-color: #844d36;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+}
+
+.wrapper:first-child {
+    color: #fdebeb;
+}
+
+.btn {
+    background-color: #fdebeb;
+    color: #844d36;
+    padding: 0.7rem 1.3rem;
+    transition: .3s ease-in-out;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #844d36;
+    border: 2px solid #fdebeb;
+    color: #fdebeb;
+}
+
+.lower-btn {
+    height: 40px;
+}
+
+
+.mobile-table {
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+    .large-table {
+        display: none;
+    }
+
+    .mobile-table {
+        display: block;
+    }
+
+}

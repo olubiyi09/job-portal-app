@@ -1,0 +1,38 @@
+.footer {
+    /* background-color: #fffbfb; */
+   
+}
+
+.container {
+    width: 85%;
+    margin: auto;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 4rem;
+    border-bottom: 1px solid #844d36;
+}
+
+.wrapper h1 {
+    font-weight: 600;
+    border-bottom: 1px solid #844d36;
+    margin-bottom: .5rem;
+}
+
+.wrapper .logo {
+    font-size: 1.7rem;
+    color: #844d36;
+    border-bottom: 0;
+}
+
+.social-icon > * {
+margin-right: .4rem;
+cursor: pointer;
+}
+
+.social-icon > *:hover {
+    transform: scale(1.2);
+    transition: transform 0.3s ease-in-out;
+}
