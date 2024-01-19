@@ -71,7 +71,7 @@ const Login: React.FC = () => {
     e.preventDefault();
 
     if (validateForm()) {
-      console.log("Form Data:", formData);
+      // console.log("Form Data:", formData);
 
       try {
         dispatch(setLoading(true))

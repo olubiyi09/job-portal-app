@@ -71,7 +71,7 @@ const Register: React.FC = () => {
     setErrors(newErrors);
 
     if (Object.keys(newErrors).length === 0) {
-      console.log(formData);
+      // console.log(formData);
 
       try {
         dispatch(setLoading(true))

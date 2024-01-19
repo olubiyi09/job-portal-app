@@ -17,3 +17,7 @@ table {
     border: 1px solid #b3b3b3 !important;
     border-radius: 2px !important;
 }
+
+.custom-table Table {
+    background-color: #ffffffea;
+}
