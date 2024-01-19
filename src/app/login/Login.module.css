@@ -3,6 +3,10 @@
     margin-top: 1rem;
 }
 
+.form {
+    background-color: transparent;
+}
+
 .form h1 {
     color: #844d36;
 }

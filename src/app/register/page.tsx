@@ -28,6 +28,7 @@ const Register: React.FC = () => {
 
   const [errors, setErrors] = useState<Record<string, string>>({});
   const dispatch = useDispatch()
+  const cardBackgroundColor = '#fff';
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -96,7 +97,7 @@ const Register: React.FC = () => {
   return (
     <div className={`flex items-center justify-center ${styles.cont}`}>
       <div className={`flex items-center justify-center ${styles.wrapper}`}>
-        <Card bordered={true}>
+        <Card style={{ background: cardBackgroundColor }} bordered={true}>
           <div className={`lg:w-96 md:w-96 sm:w-auto s px-6 rounded-md ${styles.form}`}>
             {Object.keys(errors).length > 0 && (
               <div className="text-red-500 mb-4">
