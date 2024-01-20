@@ -13,16 +13,54 @@ body {
     background-color: #fdebeb;
 }
 
-table {
-    border: 1px solid #b3b3b3 !important;
-    border-radius: 2px !important;
+div.tableContainer {
+    width: 100%;
+    overflow-x: auto;
 }
 
-.ant-table-thead .ant-table-cell {
-    background-color: #ffffffea;
+div.tableContainer table {
+    padding: 5px;
+    width: 100%;
+    overflow-x: auto;
+    border-collapse: collapse;
 }
 
+thead tr {
+    background-color: rgb(75, 75, 75);
+    color: #eee;
+}
 
-.ant-table-tbody {
-    background-color: #ffffffea;
+th {
+    border: 1px solid #eee;
+}
+
+th,
+td {
+    vertical-align: top;
+    text-align: left;
+    padding: 8px;
+    border-right: 1px solid #eee;
+}
+
+tr {
+    border: 1px solid #ccc;
+}
+
+tbody tr {
+    background-color: #fff;
+}
+
+tr:nth-child(even) {
+    background-color: #eee;
+}
+
+tbody tr:hover {
+    cursor: pointer;
+    background-color: rgba(121, 136, 149, 0.3);
+}
+
+@media screen and (max-width: 600px) {
+    .m-modal * {
+        width: 100%;
+    }
 }

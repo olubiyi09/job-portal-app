@@ -59,59 +59,59 @@ const Jobs = () => {
         }
     }
 
-    const columns = [
-        {
-            title: "Title",
-            dataIndex: "title",
-        },
-        {
-            title: "Posted On",
-            dataIndex: "createdAt",
-            render: (text: any) => moment(text).format("DD-MM-YYYY HH:mm:ss"),
-        },
-        {
-            title: "Location",
-            dataIndex: "location",
-        },
-        {
-            title: "Job Type",
-            dataIndex: "type",
-        },
-        {
-            title: "Work Mode",
-            dataIndex: "workmode",
-        },
-        {
-            title: "Experience",
-            dataIndex: "experience",
-        },
-        {
-            title: "Actions",
-            dataIndex: "actions",
-            render: (text: any, record: any) => (
-                <div className="flex gap-3">
-                    <FaEdit color="blue" size={18} style={{ cursor: "pointer" }} onClick={() => router.push(`/jobs/edit/${record._id}`)} />
-                    <RiDeleteBin6Line color="red" size={18} style={{ cursor: "pointer" }} onClick={() => deleteJob(record._id)} />
-                </div>
-            ),
-        },
-        {
-            title: "Applications",
-            dataIndex: "applications",
-            render: (text: any, record: any) => (
-                <div className="flex justify-center items-center border p-1 rounded gap-3 cursor-pointer" onClick={() => {
-                    setSelectedJobs(record);
-                    setShowApplications(true)
-                }} >
-                    <FaListUl color="green" size={18} />
-                    <p>View</p>
-                </div>
-            ),
-        }
-    ]
+    // const columns = [
+    //     {
+    //         title: "Title",
+    //         dataIndex: "title",
+    //     },
+    //     {
+    //         title: "Posted On",
+    //         dataIndex: "createdAt",
+    //         render: (text: any) => moment(text).format("DD-MM-YYYY HH:mm:ss"),
+    //     },
+    //     {
+    //         title: "Location",
+    //         dataIndex: "location",
+    //     },
+    //     {
+    //         title: "Job Type",
+    //         dataIndex: "type",
+    //     },
+    //     {
+    //         title: "Work Mode",
+    //         dataIndex: "workmode",
+    //     },
+    //     {
+    //         title: "Experience",
+    //         dataIndex: "experience",
+    //     },
+    //     {
+    //         title: "Actions",
+    //         dataIndex: "actions",
+    //         render: (text: any, record: any) => (
+    //             <div className="flex gap-3">
+    //                 <FaEdit color="blue" size={18} style={{ cursor: "pointer" }} onClick={() => router.push(`/jobs/edit/${record._id}`)} />
+    //                 <RiDeleteBin6Line color="red" size={18} style={{ cursor: "pointer" }} onClick={() => deleteJob(record._id)} />
+    //             </div>
+    //         ),
+    //     },
+    //     {
+    //         title: "Applications",
+    //         dataIndex: "applications",
+    //         render: (text: any, record: any) => (
+    //             <div className="flex justify-center items-center border p-1 rounded gap-3 cursor-pointer" onClick={() => {
+    //                 setSelectedJobs(record);
+    //                 setShowApplications(true)
+    //             }} >
+    //                 <FaListUl color="green" size={18} />
+    //                 <p>View</p>
+    //             </div>
+    //         ),
+    //     }
+    // ]
+
 
     return (
-
         <div className={`${styles.container}`}>
             <div className={`flex justify-between items-center mt-3 pr-6 ${styles.wrapper}`}>
                 <div className="pl-6">
@@ -127,17 +127,50 @@ const Jobs = () => {
 
             {currentUser && (
                 <>
-
-                    {/* <div className="my-2">
-                        <Table columns={columns} dataSource={jobs} rowKey="_id" />
-                    </div> */}
-
                     <div className={`my-2 ${styles["large-table"]}`}>
-                        <Table columns={columns} dataSource={jobs} rowKey="_id" />
-                    </div>
-
-                    <div className={`my-2 ${styles["mobile-table"]}`}>
-                        <Table style={{ maxWidth: 500 }} columns={columns} dataSource={jobs} rowKey="_id" scroll={{ x: true }} />
+                        <div className="tableContainer">
+                            <table className={styles.table}>
+                                <thead>
+                                    <tr>
+                                        <th>Title</th>
+                                        <th>Posted On</th>
+                                        <th>Location</th>
+                                        <th>Job Type</th>
+                                        <th>Work Mode</th>
+                                        <th>Experience</th>
+                                        <th>Actions</th>
+                                        <th>Applications</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {jobs.map((record: any) => (
+                                        <tr key={record._id}>
+                                            <td>{record.title}</td>
+                                            <td>{moment(record.createdAt).format("DD-MM-YYYY HH:mm:ss")}</td>
+                                            <td>{record.location}</td>
+                                            <td>{record.type}</td>
+                                            <td>{record.workmode}</td>
+                                            <td>{record.experience}</td>
+                                            <td>
+                                                <div className="flex gap-3">
+                                                    <FaEdit color="blue" size={18} style={{ cursor: "pointer" }} onClick={() => router.push(`/jobs/edit/${record._id}`)} />
+                                                    <RiDeleteBin6Line color="red" size={18} style={{ cursor: "pointer" }} onClick={() => deleteJob(record._id)} />
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div className="flex justify-center items-center border p-1 rounded gap-3 cursor-pointer" onClick={() => {
+                                                    setSelectedJobs(record);
+                                                    setShowApplications(true)
+                                                }} >
+                                                    <FaListUl color="green" size={18} />
+                                                    <p>View</p>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </>
             )}
@@ -148,9 +181,7 @@ const Jobs = () => {
                     setShowApplications={setShowApplications}
                     showApplications={showApplications}
                 />
-
             )}
-
         </div>
     )
 
