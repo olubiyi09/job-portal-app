@@ -60,7 +60,13 @@ tbody tr:hover {
 }
 
 @media screen and (max-width: 600px) {
+
+    .m-modal {
+        background-color: transparent;
+    }
+
     .m-modal * {
         width: 100%;
+        /* background-color: #fff; */
     }
 }
