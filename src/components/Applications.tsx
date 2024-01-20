@@ -308,7 +308,7 @@ function Applications({
             {applications && (
 
                 <div className="modal">
-                    <Modal
+                    <Modal mask={false}
                         title={applications.length === 0 ? "" : `Applications for ${selectedJob.title}`}
                         open={showApplications}
                         onCancel={() => setShowApplications(false)}
