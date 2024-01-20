@@ -117,13 +117,14 @@ const JobDetails = () => {
                                             <p><b>Work Mode: </b>{` ${jobData.workmode}`}</p>
                                         </div>
 
-                                        {applications.length > 0 && (
-                                            <div className={` ${styles["status-info"]}`}>
-                                                You have already applied for this job. Please wait for the
-                                                employer to respond.
-                                            </div>
-                                        )}
+
                                     </div>
+                                    {applications.length > 0 && (
+                                        <div className={` ${styles["status-info"]}`}>
+                                            You have already applied for this job. Please wait for the
+                                            employer to respond.
+                                        </div>
+                                    )}
                                 </div>
                             </div>
                         </div>
