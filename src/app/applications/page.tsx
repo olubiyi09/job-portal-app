@@ -6,15 +6,12 @@ import { useDispatch, useSelector } from 'react-redux'
 import { setLoading } from '@/redux/loaderSlide'
 import { toast } from 'sonner'
 import axios from 'axios'
-import { Table } from 'antd'
 import moment from 'moment'
-
 
 const Applications = () => {
     const [applications, setApplications] = useState([])
     const { currentUser } = useSelector((state: any) => state.users)
     const dispatch = useDispatch()
-
 
     const fetchApplications = async () => {
         try {
@@ -32,46 +29,14 @@ const Applications = () => {
             dispatch(setLoading(false))
         }
     }
+
     useEffect(() => {
         if (currentUser) {
             fetchApplications();
         }
     }, [currentUser]);
 
-
-
-
-
-
-    const columns = [
-        {
-            title: "Application ID",
-            dataIndex: "_id",
-        },
-        {
-            title: "Job Title",
-            dataIndex: "job",
-            render: (job: any) => job.title,
-        },
-        {
-            title: "Company",
-            dataIndex: "job",
-            render: (job: any) => job.user.name,
-        },
-        {
-            title: "Status",
-            dataIndex: "status",
-        },
-        {
-            title: "Applied On",
-            dataIndex: "createdAt",
-            render: (createdAt: any) => moment(createdAt).format("DD/MM/YYYY"),
-        },
-    ];
-
-
     return (
-
         <div className={`px-4 ${styles.container}`}>
             <div className={`flex justify-between items-center mt-3 pr-6 ${styles.wrapper}`}>
                 <div className="pl-6">
@@ -80,21 +45,62 @@ const Applications = () => {
             </div>
 
             {currentUser && (
-                <div className={`my-2 ${styles["large-table"]}`}>
-                    <Table columns={columns} dataSource={applications} rowKey="_id" />
+                <div className="tableContainer">
+                    <div className={`my-2 ${styles["large-table"]}`}>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Application ID</th>
+                                    <th>Job Title</th>
+                                    <th>Company</th>
+                                    <th>Status</th>
+                                    <th>Applied On</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {applications.map((application: any) => (
+                                    <tr key={application._id}>
+                                        <td>{application._id}</td>
+                                        <td>{application.job.title}</td>
+                                        <td>{application.job.user.name}</td>
+                                        <td>{application.status}</td>
+                                        <td>{moment(application.createdAt).format("DD/MM/YYYY")}</td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div className={`my-2 ${styles["mobile-table"]}`}>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Application ID</th>
+                                    <th>Job Title</th>
+                                    <th>Company</th>
+                                    <th>Status</th>
+                                    <th>Applied On</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {applications.map((application: any) => (
+                                    <tr key={application._id}>
+                                        <td>{application._id}</td>
+                                        <td>{application.job.title}</td>
+                                        <td>{application.job.user.name}</td>
+                                        <td>{application.status}</td>
+                                        <td>{moment(application.createdAt).format("DD/MM/YYYY")}</td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-            )}
 
 
-            {currentUser && (
-                <div className={`my-2 ${styles["mobile-table"]}`}>
-                    <Table style={{ maxWidth: 500 }} columns={columns} dataSource={applications} rowKey="_id" scroll={{ x: true }} />
-                </div>
             )}
         </div>
-
     )
-
 }
 
 export default Applications
