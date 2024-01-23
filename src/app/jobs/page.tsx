@@ -12,6 +12,8 @@ import moment from 'moment'
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { FaEdit, FaListUl } from "react-icons/fa";
 import Applications from '@/components/Applications'
+import Modal from '@/components/modal/Modal'
+
 
 
 const Jobs = () => {
@@ -176,7 +178,7 @@ const Jobs = () => {
             )}
 
             {showApplications && (
-                <Applications
+                <Modal
                     selectedJob={selectedJobs}
                     setShowApplications={setShowApplications}
                     showApplications={showApplications}
